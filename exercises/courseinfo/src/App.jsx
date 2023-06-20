@@ -1,37 +1,56 @@
 const App = () => {
-  const course = 'Half Stack application development';
-  const parts = [
-    { part: 'Fundamentals of React', exercises: 10 },
-    { part: 'Using props to pass data', exercises: 7 },
-    { part: 'State of a component', exercises: 14 }
-  ];
+  const course = {
+    name: 'Half Stack application development',
+    parts: [
+      {
+        name: 'Fundamentals of React',
+        exercises: 10
+      },
+      {
+        name: 'Using props to pass data',
+        exercises: 7
+      },
+      {
+        name: 'State of a component',
+        exercises: 14
+      }
+    ]
+  };
 
   const Header = (props) => {
     return (
       <>
-        <h1>{props.course}</h1>
+        <h1>{props.name}</h1>
       </>
     );
   };
 
   const Part = (props) => {
-    console.log(props);
     return (
       <>
-        <h3>{props.part}</h3>
+        <h3>{props.name}</h3>
         <p>Number of exercises: {props.exercises}</p>
       </>
     );
   };
 
-  const Content = () => {
-    console.log(parts);
+  const Content = (props) => {
+    console.log(props);
     return (
       <>
         <h2>Content:</h2>
-        <Part part={parts[0].part} exercises={parts[0].exercises} />
-        <Part part={parts[1].part} exercises={parts[1].exercises} />
-        <Part part={parts[2].part} exercises={parts[2].exercises} />
+        <Part
+          name={course.parts[0].name}
+          exercises={course.parts[0].exercises}
+        />
+        <Part
+          name={course.parts[1].name}
+          exercises={course.parts[1].exercises}
+        />
+        <Part
+          name={course.parts[2].name}
+          exercises={course.parts[2].exercises}
+        />
       </>
     );
   };
@@ -39,14 +58,18 @@ const App = () => {
     return (
       <>
         <h3>Total number of exercises:</h3>
-        <p>{parts[0].exercises + parts[1].exercises + parts[2].exercises}</p>
+        <p>
+          {course.parts[0].exercises +
+            course.parts[1].exercises +
+            course.parts[2].exercises}
+        </p>
       </>
     );
   };
 
   return (
     <div>
-      <Header course={course} />
+      <Header name={course.name} />
       <Content />
       <Total />
     </div>
