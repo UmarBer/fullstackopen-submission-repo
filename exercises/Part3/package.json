@@ -1,0 +1,25 @@
+{
+  "name": "phonebook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UmarBer/fullstackopen-submission-repo.git#main"
+  },
+  "author": "UmarBer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UmarBer/fullstackopen-submission-repo/issues"
+  },
+  "homepage": "https://github.com/UmarBer/fullstackopen-submission-repo/tree/main#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  }
+}
